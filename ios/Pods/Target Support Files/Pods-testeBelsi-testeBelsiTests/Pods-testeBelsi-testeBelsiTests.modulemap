@@ -1,0 +1,6 @@
+module Pods_testeBelsi_testeBelsiTests {
+  umbrella header "Pods-testeBelsi-testeBelsiTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
