@@ -1,5 +1,5 @@
-import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import React, { useRef } from 'react';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import logo from '~/assets/splash.png';
 
@@ -17,24 +17,35 @@ const styles = StyleSheet.create({
 })
 
 export default function SignIn({ navigation }) {
+  const passwordRef = useRef();
+
+  function handleSubmit() { }
   return (
     <Container>
       <Image source={logo} style={styles.logo} />
       <Form>
         <FormInput
+          icon="email"
           keyboardType="email-address"
           autoCorrect={false}
           autoCapitalize="none"
           placeholder="Digite seu e-mail"
+          returnKeyType="next"
+          onSubmitEditing={() => passwordRef.current.focus()}
         />
         <FormInput
+          icon="https"
           secureTextEntry={true}
           placeholder="Sua Senha"
+          ref={passwordRef}
+          returnKeyType="send"
+          onSubmitEditing={handleSubmit}
         />
-
-        <SubmitButton onPress={() => navigation.navigate('SignUp')}>
-          Acessar
-        </SubmitButton>
+        <TouchableOpacity onPress={() => navigation.navigate('Activate')}>
+          <SubmitButton >
+            Acessar
+          </SubmitButton>
+        </TouchableOpacity>
       </Form>
 
       <SignLink onPress={() => { navigation.navigate('SignUp') }}>

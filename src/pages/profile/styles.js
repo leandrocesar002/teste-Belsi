@@ -17,11 +17,11 @@ export const Form = styled.View`
 `;
 
 export const FormInput = styled(Input)`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 export const SubmitButton = styled(Button)`
-  margin-top: 5px;
+  margin-top: 25px;
 `;
 
 export const SignLink = styled.TouchableOpacity`
@@ -29,8 +29,7 @@ export const SignLink = styled.TouchableOpacity`
 `;
 
 export const SignLinkText = styled.Text`
-  color: #333;
-  margin-bottom: 20px;
+  color: #999;
   font-weight: bold;
   font-size: 16px;
 `;
